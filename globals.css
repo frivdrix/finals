@@ -138,3 +138,11 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+
+/* Force desktop nav on >= md, even if Tailwind classes don't apply for some reason */
+@media (width >= 768px) {
+  .desktop-nav { display: flex !important; }
+  .mobile-menu-btn { display: none !important; }
+  .mobile-menu { display: none !important; }
+}
