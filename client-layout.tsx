@@ -18,7 +18,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-6">
+            <nav className="hidden md:flex items-center gap-6">
               <a href="/case-studies-page" className="text-black hover:text-primary transition-colors font-medium">Case Studies</a>
               <a href="/f-a-q-page" className="text-black hover:text-primary transition-colors font-medium">FAQ</a>
               <a href="/contact-page" className="text-black hover:text-primary transition-colors font-medium">Contact</a>
@@ -29,7 +29,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden inline-flex items-center justify-center rounded-md border border-gray-300 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+              className="md:hidden inline-flex items-center justify-center rounded-md border border-gray-300 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -39,7 +39,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
 
           {/* Mobile Navigation Menu - only visible when menu is open on mobile */}
           {isMenuOpen && (
-            <div className="lg:hidden border-t border-gray-200 bg-white mt-2">
+            <div className="md:hidden border-t border-gray-200 bg-white mt-2">
               <div className="px-4 py-3 flex flex-col gap-2">
                 <a href="/case-studies-page" className="text-black hover:text-primary transition-colors py-2 px-2 font-medium text-sm" onClick={() => setIsMenuOpen(false)}>
                   Case Studies
