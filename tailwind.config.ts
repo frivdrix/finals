@@ -7,16 +7,22 @@ const config: Config = {
     "./wix/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    // Raise breakpoints so 'lg' and above rarely trigger on normal desktops.
-    // This keeps the UI looking like your Vercel Preview (md-sized) on big screens.
+    // FIXED: Use standard breakpoints instead of ultra-wide
     screens: {
       sm: "640px",
       md: "768px",
-      lg: "1921px",   // only ultra‑wide screens hit lg
-      xl: "2400px",
-      "2xl": "3000px",
+      lg: "1024px",  // Changed from 1921px - THIS IS THE KEY FIX!
+      xl: "1280px",
+      "2xl": "1536px",
     },
-    extend: {}
+    extend: {
+      colors: {
+        primary: {
+          DEFAULT: "#00ff66",
+          hover: "#00e65c",
+        },
+      },
+    }
   },
   plugins: [],
 }
