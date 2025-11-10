@@ -10,11 +10,12 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
     <>
       <header className="sticky top-0 z-50 border-b border-gray-200 bg-white w-full">
         <div className="w-full px-4 py-2 lg:px-8 lg:py-4">
-          <div className="max-w-full lg:max-w-[1400px] lg:mx-auto flex items-center justify-between gap-3 lg:gap-4">
+          {/* Standard max-width container for consistent layout */}
+          <div className="max-w-7xl mx-auto flex items-center justify-between gap-3 lg:gap-4">
             <div className="flex items-center gap-1 lg:gap-2 flex-shrink-0 min-w-fit">
-              <span className="font-heading text-lg lg:text-3xl font-black text-gray-900 whitespace-nowrap tracking-tight lg:tracking-wide leading-tight">
+              <a href="/" className="font-heading text-lg lg:text-3xl font-black text-gray-900 whitespace-nowrap tracking-tight lg:tracking-wide leading-tight">
                 LetsGrowPro
-              </span>
+              </a>
               <svg className="w-4 h-4 lg:w-6 lg:h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                 <path
                   d="M7 14l5-5 5 5"
@@ -27,7 +28,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
               </svg>
             </div>
 
-            {/* Desktop Navigation - only visible on lg and up */}
+            {/* Desktop Navigation - visible at lg (1024px) and above */}
             <nav className="hidden lg:flex items-center gap-8 flex-1 justify-center px-6">
               <a
                 href="/case-studies-page"
@@ -49,7 +50,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
               </a>
             </nav>
 
-            {/* Desktop Get Started Button - only visible on lg and up */}
+            {/* Desktop Get Started Button - visible at lg and above */}
             <a
               href="/contact-page"
               className="hidden lg:inline-block bg-primary text-white hover:bg-primary/90 px-6 py-2 rounded-full font-semibold text-base transition-colors flex-shrink-0 whitespace-nowrap"
@@ -57,7 +58,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
               Get Started
             </a>
 
-            {/* Mobile menu button - only visible on mobile */}
+            {/* Mobile menu button - visible below lg (1024px) */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors flex-shrink-0"
@@ -65,7 +66,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
             >
               {isMenuOpen ? (
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12M6 12h12" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               ) : (
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -75,7 +76,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
             </button>
           </div>
 
-          {/* Mobile Navigation Menu - only visible when menu is open on mobile */}
+          {/* Mobile Navigation Menu - shown when menu is open on mobile */}
           {isMenuOpen && (
             <div className="lg:hidden border-t border-gray-200 bg-white mt-2">
               <div className="px-4 py-3 flex flex-col gap-2">
@@ -117,7 +118,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
         {children}
         <footer className="border-t border-gray-200 bg-white py-8 lg:py-12 w-full overflow-x-hidden">
           <div className="w-full px-4 lg:px-8">
-            <div className="max-w-full lg:max-w-[1400px] lg:mx-auto">
+            <div className="max-w-7xl mx-auto">
               <small className="text-gray-600">De-Wixified on Vercel • Edit freely</small>
             </div>
           </div>
